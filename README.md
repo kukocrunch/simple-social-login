@@ -2,7 +2,7 @@
 Simple Login with Facebook and Google integration.
 using Laravel 8 Jetstream + Laravel Socialite
 
-<img src="https://prnt.sc/10zw88n" alt="Login Screen">
+![login screen](https://user-images.githubusercontent.com/7022294/112988075-00d4cc80-9196-11eb-8cb2-4542b2b27904.png)
 
 ## Requirements
 - PHP >= 7.4
