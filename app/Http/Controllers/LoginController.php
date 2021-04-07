@@ -71,9 +71,16 @@ class LoginController extends Controller
                     $newUser->name = $user->name;
                     $newUser->email = $user->email;
                     $newUser->password = encrypt('');
+                    if($driver === "facebook"){
+                        $newUser->profile_photo_path = $user->getAvatar()."&access_token=".$user->token; //retrieve avatar from Facebook
+                    }
+                    if($driver === "google"){
+                        $newUser->profile_photo_path = $user->getAvatar(); //retrieve avatar from Google
+                    }
                     $newUser->$whereColumn = $user->id;
                     $newUser->save();
                     Auth::login($newUser);
+                    return redirect('/dashboard');
                 }
             } catch (Exception $e){
                 dd($e->getMessage());
